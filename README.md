@@ -1,7 +1,6 @@
 # Publishing Python packages to PyPI
 
 
-
 ## Gitignore
 Ready-to-use .gitignore exemples
 
@@ -34,12 +33,9 @@ Instead of being prompt for credentials, get a token in pypi's website (settings
   password = <token>
 
 ```
-## CI/CD
-Use the pipeline to create a new version on PyPi after creating a new release on github. (Make sure you updated the version on `setup.py` before doing so!). Also, place `PYPI_API_TOKEN` in git secrets.
+## CI/CD pipeline
+### Versioning to PyPI
+Use `python-package.yml` to create a new version on PyPi after creating a new release on github. (Make sure you updated the version on `setup.py` before doing so!). Also, place `PYPI_API_TOKEN` in git secrets.
 
-## Build 
-    python setup.py bdist_wheel
-
-## Source distribution
-    python setup.pt sdist
-
+### Testing
+Use `python-package.yml` to run tests with `pytest` upon new commits to `master` branch.
